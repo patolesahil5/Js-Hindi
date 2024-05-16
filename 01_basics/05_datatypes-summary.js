@@ -22,20 +22,43 @@ Array, Objects, Functions
 */
 
 //Array
-const heroes = ["Shaktiman","nagraj","doga"];
+// const heroes = ["Shaktiman","nagraj","doga"];
 
-//Object - key value pair
-let myObj = {
-    name: "Sahil",
-    age: 24,
-    gender: "male"
+// //Object - key value pair
+// let myObj = {
+//     name: "Sahil",
+//     age: 24,
+//     gender: "male"
+// }
+
+// // console.log(myObj);
+
+// //Function
+// const myFunction = function(){
+//     console.log("Hello World");
+// }
+
+// console.log(typeof myFunction); 
+
+//***********************Stack, Heap Memory***************** */
+
+//Stack => Primitive datatype
+//Heap => Non Primitive
+
+// let myYoutubeName ="Sahil"
+// let anotherName = myYoutubeName;
+// anotherName = "Sahil123"
+// console.log(anotherName);
+// console.log(myYoutubeName);
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
 }
 
-// console.log(myObj);
+let userTwo = userOne
 
-//Function
-const myFunction = function(){
-    console.log("Hello World");
-}
+userTwo.email="notUser@yahoo.com"
 
-console.log(typeof myFunction); 
+console.log(userOne.email);
+console.log(userTwo.email);
