@@ -31,12 +31,12 @@ for (let index = 0; index < myArr.length; index++) {
 //         break;
 //     }
 //     console.log(i);
-    
+
 // }
 
 
 for (let i = 0; i <= 20; i++) {
-    if(i==5){
+    if (i == 5) {
         console.log(`detected 5`);
         continue;
     }
