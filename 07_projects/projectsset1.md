@@ -5,7 +5,7 @@
 
 # Solution Code
 
-## Project 1
+## Project 1 - Color Changer
 
 ``` Javascript
 const buttons = document.querySelectorAll('.button');
@@ -33,7 +33,7 @@ buttons.forEach(function (button) {
 
 ``` 
 
-## Project 2
+## Project 2 - BMI Generator
 
 ```Javascript
 const form = document.querySelector('form');
@@ -65,7 +65,7 @@ form.addEventListener('submit', function (e) {
 
 ```
 
-## Project 3
+## Project 3 - Digital Clock
 
 ```Javascript
 const clock = document.getElementById('clock');
@@ -79,7 +79,7 @@ setInterval(function () {
 
 ```
 
-## Project 4
+## Project 4 - Guess the Number
 ```Javascript
 let randomNumber = parseInt(Math.random() * 100 + 1);
 
@@ -171,5 +171,69 @@ function newGame() {
     playGame = true;
   });
 }
+
+```
+
+## Project 5 - Keyboard Check
+```Javascript
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class='color'>
+  <table>
+  <tr>
+    <th>key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>${e.key === '' ? 'Space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+  </div>`;
+});
+
+```
+
+## Project 6 - Unlimited Colors
+```Javascript
+//generate a random color.
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let intervalId;
+
+const startChangingColor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000);
+  }
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+// console.log(randomColor());
+// console.log(Math.floor(Math.random() * 16));
+document.querySelector('#start').addEventListener('click', startChangingColor);
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
 
 ```
